@@ -1,0 +1,15 @@
+variable "virtual_desktop_workspace_application_group_associations" {
+  description = <<EOT
+Map of virtual_desktop_workspace_application_group_associations, attributes below
+Required:
+    - application_group_id
+    - workspace_id
+EOT
+
+  type = map(object({
+    application_group_id = string
+    workspace_id         = string
+  }))
+  # Note: 4 additional provider-side validators are enforced at apply time but not mirrored as validation{} blocks here (bespoke or non-mechanically-translatable).
+}
+
